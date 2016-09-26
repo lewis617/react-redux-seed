@@ -8,7 +8,7 @@ import {
   incrementAsync, loadCounter
 } from '../../redux/counter';
 
-export class Counter extends Component {
+class Counter extends Component {
 
   static propTypes = {
     increment: PropTypes.func.isRequired,

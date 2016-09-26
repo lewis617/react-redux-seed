@@ -7,6 +7,7 @@
   },
   "rules": {
     "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
     "comma-dangle": 0,
     "no-console": 0,
     "no-alert": 0,
@@ -14,10 +15,13 @@
     "global-require": 0,
     "no-underscore-dangle": 0,
     "no-undef": 0,
-    "react/jsx-space-before-closing": 0,
     "no-shadow": 0,
+    "new-cap": 0,
+    "react/jsx-space-before-closing": 0,
     "react/prefer-stateless-function": 0,
-    "new-cap": 0
+    "react/no-danger": 0,
+    "react/jsx-filename-extension": 0,
+    "react/forbid-prop-types": 0
   },
   "parser": "babel-eslint",
   "plugins": [

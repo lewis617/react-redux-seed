@@ -13,6 +13,7 @@ class Main extends Component {
 
   render() {
     require('./index.scss');
+
     return (
       <div>
         <Helmet {...config.app.head}/>

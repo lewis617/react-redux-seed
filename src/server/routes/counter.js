@@ -1,7 +1,7 @@
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-export default router => {
+export default (router) => {
   router.get('/counter', (req, res) => {
     setTimeout(() => {
       if (Math.random() < 0.33) {

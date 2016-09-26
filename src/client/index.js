@@ -2,8 +2,8 @@ import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import configureStore from '../common/utils/configureStore';
 import { match, Router, browserHistory } from 'react-router';
+import configureStore from '../common/utils/configureStore';
 import getRoutes from '../common/routes';
 
 const initialState = window.__INITIAL_STATE__;

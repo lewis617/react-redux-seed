@@ -11,7 +11,7 @@ const preload = promise => (nextState, replace, cb) => {
   }
 };
 
-export default store => {
+export default (store) => {
   const counterPromise = () => store.dispatch(loadCounter());
   return (
     <Route path="/" component={Main}>

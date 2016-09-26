@@ -1,5 +1,6 @@
 import { ASYNC } from 'redux-amr';
 import { customFetch } from '../utils/utils';
+
 const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 

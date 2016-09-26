@@ -3,7 +3,6 @@ var webpack = require('webpack');
 var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
-
 var projectRootPath = path.resolve(__dirname, '../');
 var assetsPath = path.resolve(projectRootPath, './static/dist');
 

@@ -1,7 +1,6 @@
 /* eslint-disable */
 var path = require('path');
 var rootDir = path.resolve(__dirname, '..', '..');
-
 var WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 
 global.__SERVER__ = true;

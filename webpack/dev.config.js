@@ -1,12 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
-
 var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
-
 var projectRootPath = path.resolve(__dirname, '../');
 var assetsPath = path.resolve(projectRootPath, './static/dist');
-
 var config = require('../src/config');
 
 module.exports = {

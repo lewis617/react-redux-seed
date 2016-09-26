@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === 'production') {
   global.webpackIsomorphicTools = new WebpackIsomorphicTools(
     require('../../webpack/webpack-isomorphic-tools'))
     .server(rootDir, function () {
-      require('../build/server');
+      require('../../build/server/server');
     });
 }
 else {

@@ -15,7 +15,7 @@ function renderFullPage(assets, component, store) {
     <html class="no-js" lang=""> <!--<![endif]-->
       ${head}
       <body>
-        <!--[if lt IE 9]>
+        <!--[if lt IE 8]>
           <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div id="app">${content}</div>

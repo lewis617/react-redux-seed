@@ -3,12 +3,11 @@ import Express from 'express';
 import bodyParser from 'body-parser';
 import favicon from 'serve-favicon';
 import React from 'react';
-import { renderToString } from 'react-dom/server';
 import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
-import configureStore from '../common/utils/configureStore';
-import getRoutes from '../common/routes';
-import renderFullPage from './utils/renderFullPage';
+import configureStore from '../utils/configureStore';
+import renderFullPage from '../utils/renderFullPage';
+import getRoutes from '../routes';
 import config from '../config';
 import serverRoutes from './routes';
 

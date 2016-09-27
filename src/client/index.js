@@ -3,8 +3,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { match, Router, browserHistory } from 'react-router';
-import configureStore from '../common/utils/configureStore';
-import getRoutes from '../common/routes';
+import configureStore from '../utils/configureStore';
+import getRoutes from '../routes';
 
 const initialState = window.__INITIAL_STATE__;
 const store = configureStore(initialState);

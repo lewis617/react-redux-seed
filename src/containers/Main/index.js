@@ -3,8 +3,8 @@ import { IndexLink } from 'react-router';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Helmet from 'react-helmet';
-import Spin from './Spin';
-import config from '../../../config';
+import LoadingBar from './LoadingBar';
+import config from '../../config';
 
 class Main extends Component {
   static propTypes = {
@@ -17,6 +17,7 @@ class Main extends Component {
     return (
       <div>
         <Helmet {...config.app.head}/>
+        <LoadingBar />
         <Navbar inverse>
           <Navbar.Header>
             <Navbar.Brand>
@@ -35,9 +36,6 @@ class Main extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
-        <Spin />
-
         <div>
           {/* this will render the child routes */}
           {React.cloneElement(this.props.children, this.props)}

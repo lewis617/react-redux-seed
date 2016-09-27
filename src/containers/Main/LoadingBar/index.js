@@ -71,14 +71,14 @@ class LoadingBar extends Component {
     const style = {
       height: '3px',
       width: `${this.state.percent}%`,
-      backgroundColor: '#1af184',
+      backgroundColor: '#4078c0',
       transition: `width ${ANIMATION_TIME}ms ease-out,
                    height ${ANIMATION_TIME}ms linear,
                    opacity ${ANIMATION_TIME}ms ease-out`,
       position: 'absolute',
       opacity: '1',
       zIndex: '999',
-      boxShadow: '-3px 0 15px 1px rgba(0,255,231,.4)'
+      boxShadow: '-3px 0 15px 1px #4078c0'
     };
 
     return { ...style, ...this.props.style };

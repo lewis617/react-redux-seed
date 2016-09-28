@@ -11,6 +11,7 @@ module.exports = {
   context: projectRootPath,
   entry: [
     'bootstrap-loader/extractStyles',
+    'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.prod.js',
     './build/client'
   ],
   output: {
@@ -58,10 +59,9 @@ module.exports = {
           '!sass'
         )
       },
-
       {
         test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: "url"
+        loader: "url?limit=10000"
       },
       {
         test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,

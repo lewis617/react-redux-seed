@@ -1,5 +1,5 @@
 import 'isomorphic-fetch';
-import config from '../config';
+import config from '../../../config';
 
 function handle401(res) {
   if (res.status === 401 && !__SERVER__) {
@@ -15,7 +15,7 @@ function handleErrors(res) {
   return res.json();
 }
 
-export function customFetch(url, option) {
+function customFetch(url, option) {
   const prefix = __SERVER__ ? `http://${config.host}:${config.port}/api` : '/api';
 
   let opt = option || {};
@@ -38,3 +38,5 @@ export function customFetch(url, option) {
     .then(handle401)
     .then(handleErrors);
 }
+
+export default customFetch;

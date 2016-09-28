@@ -4,7 +4,7 @@ import { Navbar, Nav, NavItem } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import Helmet from 'react-helmet';
 import LoadingBar from './LoadingBar';
-import config from '../../config';
+import config from '../../../config';
 
 class Main extends Component {
   static propTypes = {

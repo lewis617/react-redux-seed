@@ -64,15 +64,4 @@ function counter(state = initialState, action) {
   }
 }
 
-export default reducer => (state, action) => {
-  switch (action.type) {
-    case INCREMENT_COUNTER:
-    case DECREMENT_COUNTER:
-      return {
-        ...state,
-        counter: counter(state.counter, action)
-      };
-    default:
-      return reducer(state, action);
-  }
-};
+export default counter;

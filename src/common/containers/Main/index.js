@@ -31,7 +31,7 @@ class Main extends Component {
           <Navbar.Collapse>
             <Nav navbar pullRight>
               <LinkContainer to="/counter">
-                <NavItem>计数器</NavItem>
+                <NavItem eventKey={1}>计数器</NavItem>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>

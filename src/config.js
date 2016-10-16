@@ -1,6 +1,6 @@
 module.exports = {
-  host: process.env.HOST || 'localhost',
-  port: process.env.PORT || process.env.NODE_ENV === 'production' ? 8080 : 3000,
+  host: process.env.HOST || (process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost'),
+  port: process.env.PORT || (process.env.NODE_ENV === 'production' ? 8080 : 3000),
   app: {
     title: 'React Redux Seed',
     description: 'React Redux Seed',

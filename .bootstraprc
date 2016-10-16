@@ -19,50 +19,50 @@ styles:
 
   # Reset and dependencies
   normalize: true
-  print: true
+  print: false
   glyphicons: true
 
   # Core CSS
   scaffolding: true
   type: true
-  code: true
+  code: false
   grid: true
   tables: true
   forms: true
   buttons: true
 
   # Components
-  component-animations: true
+  component-animations: false
   dropdowns: true
-  button-groups: true
+  button-groups: false
   input-groups: true
   navs: true
   navbar: true
-  breadcrumbs: true
+  breadcrumbs: false
   pagination: true
   pager: true
   labels: true
-  badges: true
+  badges: false
   jumbotron: true
-  thumbnails: true
+  thumbnails: false
   alerts: true
-  progress-bars: true
-  media: true
-  list-group: true
-  panels: true
-  wells: true
-  responsive-embed: true
+  progress-bars: false
+  media: false
+  list-group: false
+  panels: false
+  wells: false
+  responsive-embed: false
   close: true
 
   # Components w/ JavaScript
-  modals: true
+  modals: false
   tooltip: true
-  popovers: true
-  carousel: true
+  popovers: false
+  carousel: false
 
   # Utility classes
   utilities: true
-  responsive-utilities: true
+  responsive-utilities: false
 
 ### Bootstrap scripts
 scripts: false

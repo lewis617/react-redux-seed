@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { asyncMiddleware } from 'redux-amr';
+import { asyncMiddleware } from 'redux-amrc';
 import rootReducer from './redux';
 
 

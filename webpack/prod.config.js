@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'source-map',
   context: projectRootPath,
   entry: [
-    'bootstrap-loader/extractStyles',
+    `bootstrap-loader/lib/bootstrap.loader?extractStyles&configFilePath=${projectRootPath}/.bootstraprc!bootstrap-loader/no-op.js`,
     'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.prod.js',
     './build/client'
   ],

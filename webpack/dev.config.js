@@ -11,7 +11,7 @@ module.exports = {
   context: projectRootPath,
   entry: [
     'webpack-hot-middleware/client?path=http://localhost:3001/__webpack_hmr',
-    'bootstrap-loader',
+    `bootstrap-loader/lib/bootstrap.loader?configFilePath=${projectRootPath}/.bootstraprc!bootstrap-loader/no-op.js`,
     'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.js',
     './src/client'
   ],

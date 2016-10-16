@@ -5,14 +5,13 @@ import favicon from 'serve-favicon';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
-import configureStore from '../common/store';
-import getRoutes from '../common/routes';
-import renderFullPage from './utils/renderFullPage';
+import { getRoutes, configureStore } from '../common';
+import renderFullPage from '../common/utils/renderFullPage';
 import config from '../config';
-import serverRoutes from './routes';
+import serverRoutes from './controllers';
 
 const app = new Express();
-const port = config.port;
+const { host, port } = config;
 
 app.use(Express.static(path.join(__dirname, '..', '..', 'static')));
 app.use(favicon(path.join(__dirname, '..', '..', 'static', 'favicon.ico')));
@@ -45,10 +44,10 @@ app.use((req, res) => {
   });
 });
 
-app.listen(port, (error) => {
+app.listen(port, host, (error) => {
   if (error) {
     console.error(error);
   } else {
-    console.info('==> 🌎  Open http://%s:%s in a browser to view the app.', config.host, port);
+    console.info('==> 🌎  Open http://%s:%s in a browser to view the app.', host, port);
   }
 });

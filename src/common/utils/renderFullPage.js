@@ -30,7 +30,12 @@ Head.propTypes = {
 
 function renderFullPage(assets, component, store) {
   const head = renderToString(<Head assets={assets}/>);
-  const content = renderToString(component);
+  let content = '';
+  try {
+    content = renderToString(component);
+  } catch (err) {
+    console.error('RENDER ERROR: ', err.stack);
+  }
   return `
     <!doctype html> 
     <html>

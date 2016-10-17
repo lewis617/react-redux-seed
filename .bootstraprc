@@ -12,6 +12,8 @@ preBootstrapCustomizations: ./static/theme/bootstrap/pre-customizations.scss
 
 bootstrapCustomizations: ./static/theme/bootstrap/customizations.scss
 
+appStyles: ./static/theme/bootstrap/app.scss
+
 styles:
 
   # Mixins
@@ -32,7 +34,7 @@ styles:
   buttons: true
 
   # Components
-  component-animations: false
+  component-animations: true
   dropdowns: true
   button-groups: false
   input-groups: true

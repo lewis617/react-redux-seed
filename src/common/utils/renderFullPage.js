@@ -4,8 +4,7 @@ import serialize from 'serialize-javascript';
 import Helmet from 'react-helmet';
 
 function Head(props) {
-  const { assets } = props;
-  const head = Helmet.rewind();
+  const { assets, head } = props;
 
   return (
     <head>
@@ -25,21 +24,23 @@ function Head(props) {
 }
 
 Head.propTypes = {
-  assets: PropTypes.object
+  assets: PropTypes.object,
+  head: PropTypes.object.isRequired
 };
 
 function renderFullPage(assets, component, store) {
-  const head = renderToString(<Head assets={assets}/>);
   let content = '';
   try {
     content = renderToString(component);
   } catch (err) {
     console.error('RENDER ERROR: ', err.stack);
   }
+  const head = Helmet.rewind();
+  const headHtml = renderToString(<Head assets={assets} head={head}/>);
   return `
     <!doctype html> 
     <html>
-      ${head}
+      ${headHtml}
       <body>
         <!--[if lt IE 9]>
           <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>

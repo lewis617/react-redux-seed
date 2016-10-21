@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { IndexLink } from 'react-router';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import IndexLink from 'react-router/lib/IndexLink';
+import Navbar from 'react-bootstrap/lib/Navbar';
+import Nav from 'react-bootstrap/lib/Nav';
+import NavItem from 'react-bootstrap/lib/NavItem';
 import { LinkContainer } from 'react-router-bootstrap';
 import Helmet from 'react-helmet';
 import LoadingBar from './LoadingBar';

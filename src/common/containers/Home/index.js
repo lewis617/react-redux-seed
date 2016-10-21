@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Jumbotron, Button } from 'react-bootstrap';
+import Jumbotron from 'react-bootstrap/lib/Jumbotron';
+import Button from 'react-bootstrap/lib/Button';
 
 function Home() {
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import Route from 'react-router/lib/Route';
+import IndexRoute from 'react-router/lib/IndexRoute';
 import { Main, Home, Counter, NotFound } from './containers';
 import { loadCounter } from './redux/counter';
 

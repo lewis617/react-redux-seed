@@ -35,12 +35,14 @@ function renderFullPage(assets, component, store) {
   } catch (err) {
     console.error('RENDER ERROR: ', err.stack);
   }
-  const head = Helmet.rewind();
-  const headHtml = renderToString(<Head assets={assets} head={head}/>);
+  const head = renderToString(<Head assets={assets} head={Helmet.rewind()}/>);
+  const scripts = Object.keys(assets.javascript).reduce(
+    (last, current) => last + `<script src=${assets.javascript[current]}></script>`
+    , '');
   return `
     <!doctype html> 
     <html>
-      ${headHtml}
+      ${head}
       <body>
         <!--[if lt IE 9]>
           <p class="alert alert-danger">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -49,7 +51,7 @@ function renderFullPage(assets, component, store) {
         <script>
           window.__INITIAL_STATE__ = ${serialize(store.getState())}
         </script>
-        <script src=${assets.javascript.main}></script>
+        ${scripts}
       </body>
     </html>
     `;

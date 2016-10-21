@@ -9,19 +9,27 @@ var assetsPath = path.resolve(projectRootPath, './static/dist');
 module.exports = {
   devtool: 'source-map',
   context: projectRootPath,
-  entry: [
-    `bootstrap-loader/lib/bootstrap.loader?extractStyles&configFilePath=${projectRootPath}/.bootstraprc!bootstrap-loader/no-op.js`,
-    'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.prod.js',
-    './build/client'
-  ],
+  entry: {
+    main: [
+      'bootstrap-loader/extractStyles',
+      'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.prod.js',
+      './build/client'
+    ],
+    vendors: [
+      'react', 'react-bootstrap', 'react-dom', 'react-helmet', 'react-redux',
+      'react-router', 'react-router-bootstrap', 'redux', 'redux-amrc', 'redux-thunk',
+      'serialize-javascript'
+    ]
+  },
   output: {
     path: assetsPath,
     filename: '[name]-[chunkhash].js',
     chunkFilename: '[name]-[chunkhash].js',
-    publicPath: '/dist/'
+    publicPath: '/static/dist/'
   },
   progress: true,
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
     new ExtractTextPlugin('[name]-[chunkhash].css', { allChunks: true }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
@@ -47,7 +55,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           'style',
           'css?modules&importLoaders=1&localIdentName=[name]__[local]__[hash:base64:5]' +
-          'postcss'
+          '!postcss'
         )
       },
       {
@@ -55,7 +63,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract(
           'style',
           'css?modules&importLoaders=2&localIdentName=[name]__[local]__[hash:base64:5]' +
-          'postcss' +
+          '!postcss' +
           '!sass'
         )
       },

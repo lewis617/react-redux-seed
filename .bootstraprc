@@ -12,7 +12,7 @@ preBootstrapCustomizations: ./static/theme/bootstrap/pre-customizations.scss
 
 bootstrapCustomizations: ./static/theme/bootstrap/customizations.scss
 
-appStyles: ./static/theme/bootstrap/app.scss
+# appStyles: ./static/theme/bootstrap/app.scss
 
 styles:
 

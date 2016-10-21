@@ -13,8 +13,8 @@ import serverRoutes from './controllers';
 const app = new Express();
 const { host, port } = config;
 
-app.use(Express.static(path.join(__dirname, '..', '..', 'static')));
-app.use(favicon(path.join(__dirname, '..', '..', 'static', 'favicon.ico')));
+app.use('/static', Express.static(path.join(__dirname, '../../static')));
+app.use(favicon(path.join(__dirname, '../../static/favicon.ico')));
 app.use(bodyParser.json());
 app.use('/api', serverRoutes);
 app.use((req, res) => {

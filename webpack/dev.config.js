@@ -5,24 +5,34 @@ var WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 var projectRootPath = path.resolve(__dirname, '../');
 var assetsPath = path.resolve(projectRootPath, './static/dist');
 var config = require('../src/config');
+var port = config.port + 1;
+var host = config.host;
 
 module.exports = {
   devtool: 'cheap-eval-source-map',
   context: projectRootPath,
-  entry: [
-    'webpack-hot-middleware/client?path=http://localhost:3001/__webpack_hmr',
-    `bootstrap-loader/lib/bootstrap.loader?configFilePath=${projectRootPath}/.bootstraprc!bootstrap-loader/no-op.js`,
-    'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.js',
-    './src/client'
-  ],
+  entry: {
+    main: [
+      `webpack-hot-middleware/client?path=http://${host}:${port}/__webpack_hmr`,
+      'bootstrap-loader',
+      'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.js',
+      './src/client'
+    ],
+    vendors: [
+      'react', 'react-bootstrap', 'react-dom', 'react-helmet', 'react-redux',
+      'react-router', 'react-router-bootstrap', 'redux', 'redux-amrc', 'redux-thunk',
+      'serialize-javascript'
+    ]
+  },
   output: {
     path: assetsPath,
     filename: '[name]-[hash].js',
     chunkFilename: '[name]-[chunkhash].js',
-    publicPath: 'http://' + config.host + ':' + (config.port + 1) + '/dist/'
+    publicPath: 'http://' + config.host + ':' + (config.port + 1) + '/static/dist/'
   },
   progress: true,
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({

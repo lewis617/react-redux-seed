@@ -11,19 +11,12 @@ var host = config.host;
 module.exports = {
   devtool: 'cheap-eval-source-map',
   context: projectRootPath,
-  entry: {
-    main: [
-      `webpack-hot-middleware/client?path=http://${host}:${port}/__webpack_hmr`,
-      'bootstrap-loader',
-      'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.js',
-      './src/client'
-    ],
-    vendors: [
-      'react', 'react-bootstrap', 'react-dom', 'react-helmet', 'react-redux',
-      'react-router', 'react-router-bootstrap', 'redux', 'redux-amrc', 'redux-thunk',
-      'serialize-javascript'
-    ]
-  },
+  entry: [
+    `webpack-hot-middleware/client?path=http://${host}:${port}/__webpack_hmr`,
+    `bootstrap-loader/lib/bootstrap.loader?configFilePath=${projectRootPath}/.bootstraprc!bootstrap-loader/no-op.js`,
+    'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.js',
+    './src/client'
+  ],
   output: {
     path: assetsPath,
     filename: '[name]-[hash].js',
@@ -32,7 +25,6 @@ module.exports = {
   },
   progress: true,
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js'),
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({

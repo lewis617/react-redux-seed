@@ -4155,9 +4155,9 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "~0.1.0"
 
-redux-amrc@^0.0.3:
-  version "0.0.3"
-  resolved "http://registry.npm.taobao.org/redux-amrc/download/redux-amrc-0.0.3.tgz#2a9070147f3dba9e62205e44a11cab0a86d01f74"
+redux-amrc@^1.0.4:
+  version "1.0.4"
+  resolved "http://registry.npm.taobao.org/redux-amrc/download/redux-amrc-1.0.4.tgz#901a359c1baab541920f3972f8eebc7b008f6e3a"
 
 redux-thunk@^2.1.0:
   version "2.1.0"

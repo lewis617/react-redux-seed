@@ -5,7 +5,7 @@ import favicon from 'serve-favicon';
 import React from 'react';
 import { Provider } from 'react-redux';
 import match from 'react-router/lib/match';
-import RouterContext from 'react-router/lib/RouteContext';
+import RouterContext from 'react-router/lib/RouterContext';
 import { getRoutes, configureStore } from '../common';
 import renderFullPage from '../common/utils/renderFullPage';
 import config from '../config';

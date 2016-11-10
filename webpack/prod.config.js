@@ -11,7 +11,7 @@ module.exports = {
   context: projectRootPath,
   entry: [
     `bootstrap-loader/lib/bootstrap.loader?extractStyles&configFilePath=${projectRootPath}/.bootstraprc!bootstrap-loader/no-op.js`,
-    'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.prod.js',
+    'font-awesome-loader!./src/theme/font-awesome/font-awesome.config.prod.js',
     './build/client'
   ],
   output: {

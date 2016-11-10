@@ -14,7 +14,7 @@ module.exports = {
   entry: [
     `webpack-hot-middleware/client?path=http://${host}:${port}/__webpack_hmr`,
     `bootstrap-loader/lib/bootstrap.loader?configFilePath=${projectRootPath}/.bootstraprc!bootstrap-loader/no-op.js`,
-    'font-awesome-loader!./static/theme/font-awesome/font-awesome.config.js',
+    'font-awesome-loader!./src/theme/font-awesome/font-awesome.config.js',
     './src/client'
   ],
   output: {

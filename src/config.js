@@ -11,7 +11,17 @@ module.exports = {
           name: 'description',
           content: 'React Redux Seed'
         },
-        { charset: 'utf-8' }
+        { charset: 'utf-8' },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1'
+        }
+      ],
+      link: [
+        {
+          rel: 'shortcut icon',
+          href: '/favicon.ico'
+        }
       ]
     }
   }

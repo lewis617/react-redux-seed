@@ -10,7 +10,7 @@ function renderFullPage(assets, component, store) {
     console.error('RENDER ERROR: ', err.stack);
   }
   const head = Helmet.rewind();
-  const assetsLink = Object.keys(assets.styles).map((style) =>
+  const assetsLink = Object.keys(assets.styles).map(style =>
     `<link href=${assets.styles[style]} rel="stylesheet" type="text/css"/>`
   );
   return `

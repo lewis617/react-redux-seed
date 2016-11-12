@@ -1,8 +1,8 @@
 import { ASYNC } from 'redux-amrc';
 import { customFetch } from '../utils/utils';
 
-const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
-const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
+export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
+export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';
 
 export function increment() {
   return {

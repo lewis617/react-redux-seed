@@ -45,6 +45,16 @@ export function loadCounter() {
   };
 }
 
+export function loadCounterIfNeeded() {
+  return (dispatch, getState) => {
+    if (getState().async.counter) {
+      return Promise.resolve();
+    }
+
+    return dispatch(loadCounter());
+  };
+}
+
 const initialState = {
   value: 0
 };

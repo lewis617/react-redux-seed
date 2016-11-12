@@ -2,18 +2,14 @@ import React from 'react';
 import Route from 'react-router/lib/Route';
 import IndexRoute from 'react-router/lib/IndexRoute';
 import { Main, Home, Counter, NotFound } from './containers';
-import { loadCounter } from './redux/counter';
+import { loadCounterIfNeeded } from './redux/counter';
 
 const preload = promise => (nextState, replace, cb) => {
-  if (__SERVER__ || nextState.location.action === 'PUSH') {
-    promise().then(() => cb());
-  } else {
-    cb();
-  }
+  promise().then(() => cb());
 };
 
 export default (store) => {
-  const counterPromise = () => store.dispatch(loadCounter());
+  const counterPromise = () => store.dispatch(loadCounterIfNeeded());
   return (
     <Route path="/" component={Main}>
       <IndexRoute component={Home}/>

@@ -4326,9 +4326,9 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "~0.1.0"
 
-redux-amrc@^1.0.4:
-  version "1.0.4"
-  resolved "http://node001v.add.lyct.qihoo.net:4873/redux-amrc/-/redux-amrc-1.0.4.tgz#901a359c1baab541920f3972f8eebc7b008f6e3a"
+redux-amrc@1.0.6:
+  version "1.0.6"
+  resolved "https://registry.npmjs.org/redux-amrc/-/redux-amrc-1.0.6.tgz#360689f7803b345abf6797a2b0d53d20bb8e8933"
 
 redux-mock-store@^1.2.1:
   version "1.2.1"

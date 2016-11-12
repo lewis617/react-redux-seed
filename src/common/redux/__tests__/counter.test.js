@@ -86,25 +86,6 @@ describe('common', () => {
             expect(store.getActions()).toEqual(expectedActions);
           });
       });
-      it('loadCounterIfNeeded should dispatch loadCounter if not state.async.loadState.counter.loaded', () => {
-        const expectedActions = [
-          load('counter'),
-          loadSuccess('counter', data)
-        ];
-        const store = setup({ async: { loadState: { counter: { loaded: false } } } });
-        return store.dispatch(loadCounterIfNeeded())
-          .then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-          });
-      });
-      it('loadCounterIfNeeded shouldn\'t dispatch loadCounter if state.async.loadState.counter.loaded', () => {
-        const expectedActions = [];
-        const store = setup({ async: { loadState: { counter: { loaded: true } } } });
-        return store.dispatch(loadCounterIfNeeded())
-          .then(() => {
-            expect(store.getActions()).toEqual(expectedActions);
-          });
-      });
     });
     describe('counter reducer test', () => {
       it('counter should handle INCREMENT_COUNTER action', () => {

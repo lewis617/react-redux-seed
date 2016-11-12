@@ -5,7 +5,9 @@ import { Main, Home, Counter, NotFound } from './containers';
 import { loadCounterIfNeeded } from './redux/counter';
 
 const preload = promise => (nextState, replace, cb) => {
-  promise().then(() => cb());
+  promise()
+    .then(() => cb())
+    .catch(err => console.error(err.stack));
 };
 
 export default (store) => {

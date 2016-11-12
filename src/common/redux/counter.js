@@ -47,10 +47,10 @@ export function loadCounter() {
 
 export function loadCounterIfNeeded() {
   return (dispatch, getState) => {
-    if (getState().async.counter) {
+    const loadState = getState().async.loadState;
+    if (loadState.counter && loadState.counter.loaded) {
       return Promise.resolve();
     }
-
     return dispatch(loadCounter());
   };
 }

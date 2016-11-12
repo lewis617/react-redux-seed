@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "React Redux Seed",
   "scripts": {
-    "start": "npm run dev",
+    "start": "npm run start-prod",
     "clean": "rimraf build static/dist",
     "build-server": "babel src -d build --copy-files",
     "build-client": "webpack --config webpack/prod.config.js",
@@ -13,7 +13,8 @@
     "watch-client": "node webpack/webpack-dev-server",
     "prod": "npm run build && npm run start-prod",
     "dev": "concurrently -k \"npm run watch-client\" \"npm run start-dev\"",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "babel-polyfill": "^6.9.1",
